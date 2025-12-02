@@ -57,8 +57,10 @@ def compute_weighted_popularity_score(
     m = min_votes * weight_factor
 
     # Bayesian weighted average
-    weighted_score = (rating_count / (rating_count + m)) * avg_rating + \
-                     (m / (rating_count + m)) * global_mean
+    weighted_score = (
+        (rating_count / (rating_count + m)) * avg_rating +
+        (m / (rating_count + m)) * global_mean
+    )
 
     return weighted_score
 
