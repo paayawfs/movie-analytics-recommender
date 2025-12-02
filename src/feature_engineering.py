@@ -255,7 +255,9 @@ def create_decade_feature(years: pd.Series) -> pd.Series:
         >>> list(decades)
         [1990, 2000, 2010]
     """
-    return (years // 10) * 10
+    # Handle NaN values by using pandas nullable integer operations
+    # NaN values will remain NaN in the result
+    return years.floordiv(10).mul(10)
 
 
 def create_year_features(
