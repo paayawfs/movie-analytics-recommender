@@ -6,7 +6,6 @@ including ratings.csv, movies.csv, and tags.csv files.
 """
 
 import pandas as pd
-from pathlib import Path
 
 
 def load_ratings(data_path: str = "data/ratings.csv") -> pd.DataFrame:
